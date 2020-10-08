@@ -1,6 +1,7 @@
 <template>
   <v-row class="fill-height">
     <v-col>
+      <v-divider></v-divider>
       <v-sheet height="64">
         <v-toolbar
           flat
@@ -83,7 +84,7 @@
       <!-- Add event dialog -->
       <v-dialog v-model="dialog" max-width="500">
         <v-card>
-          <v-container>
+          <v-container fluid>
             <v-form @submit.prevent="addEvent">
               <v-text-field v-model="name" type="text" label="Event name (required)"></v-text-field>
               <v-text-field v-model="details" type="text" label="Detail"></v-text-field>
@@ -205,7 +206,7 @@ export default {
       selectedElement: null,
       selectedOpen: false,
       events: [],
-      dialog: false
+      dialog: false,
     }
   },
   mounted() {
@@ -367,3 +368,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  #title {
+    color: #e73b3b;
+    font-size: 2.5rem;
+  }
+</style>
